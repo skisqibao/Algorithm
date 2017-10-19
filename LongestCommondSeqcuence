@@ -36,7 +36,7 @@ void LCSLength(int m,int n,const char x[],char B[])   //m&n is row&column
 void LCS(int i,int j,char x[])
 {
     if(i==0||j==0) return;
-    if(b[i][j]==1) cout<<x[i]<<" ";
+    if(b[i][j]==1){ LCS(i-1,j-1,x); cout<<x[i]<<" "; }
     else if(b[i][j]==2) LCS(i-1,j,x);
     else LCS(i,j-1,x);
 }
